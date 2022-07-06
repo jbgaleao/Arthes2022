@@ -14,11 +14,11 @@ namespace Arthes2022.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Tema = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Tema = table.Column<string>(type: "nvarchar(255)", nullable: true),
                     NumeroEdicao = table.Column<int>(type: "int", nullable: false),
                     MesEdicao = table.Column<int>(type: "int", nullable: false),
                     AnoEdicao = table.Column<int>(type: "int", nullable: false),
-                    Foto = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Foto = table.Column<string>(type: "nvarchar(255)", nullable: false)
                 },
                 constraints: table =>
                 {

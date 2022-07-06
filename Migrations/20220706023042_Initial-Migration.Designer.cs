@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Arthes2022.Migrations
 {
     [DbContext(typeof(ArthesContext))]
-    [Migration("20220705055307_Initial-Migration")]
+    [Migration("20220706023042_Initial-Migration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

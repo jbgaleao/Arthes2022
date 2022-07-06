@@ -1,7 +1,21 @@
-﻿namespace Arthes2022.Models.Entities
+﻿using System.ComponentModel;
+
+namespace Arthes2022.Models.Entities
 {
     public enum Mes
     {
-        JANEIRO, FEVEREIRO, MARCO, ABRIL, MAIO, JUNHO, JULHO, AGOSTO, SETEMBRO, OUTBRO, NOVEMBRO, DEZEMBRO
+        JANEIRO, 
+        FEVEREIRO, 
+        [Description("MARÇO")] 
+        MARCO, 
+        ABRIL, 
+        MAIO, 
+        JUNHO, 
+        JULHO, 
+        AGOSTO, 
+        SETEMBRO, 
+        OUTBRO, 
+        NOVEMBRO, 
+        DEZEMBRO
     }
 }

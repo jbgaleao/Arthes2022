@@ -1,0 +1,56 @@
+﻿@model Arthes2022.Models.ViewModels.RevistaViewModel
+
+<html>
+<body>
+    <h1>Cadastro de Revistas</h1>
+
+    <hr />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Tema, new { @class="control-label"})
+                        @Html.TextBoxFor(model => model.Tema, new { @class="form-control"})
+                        @Html.ValidationMessageFor(x => x.Tema, "", new { @id = "Error", @class = "text-danger" })
+                    </div>
+                    <div class="form-group col-md-4">
+                        @Html.LabelFor(model => model.NumeroEdicao, new { @class="control-label"})
+                        @Html.TextBoxFor(model => model.NumeroEdicao, new { @class="form-control"})
+                        @Html.ValidationMessageFor(x => x.NumeroEdicao, "", new { @id = "Error", @class = "text-danger" })
+                    </div>
+                    <div class="form-group  col-md-4">
+                        @Html.LabelFor(model => model.MesEdicao, new { @class="control-label"})
+                        @Html.TextBoxFor(model => model.MesEdicao, new { @class="form-control"})
+                        @Html.ValidationMessageFor(x => x.MesEdicao, "", new { @id = "Error", @class = "text-danger" })
+                    </div>
+                    <div class="form-group col-md-4">
+                        @Html.LabelFor(model => model.AnoEdicao, new { @class="control-label"})
+                        @Html.TextBoxFor(model => model.AnoEdicao, new { @class="form-control"})
+                        @Html.ValidationMessageFor(x => x.AnoEdicao, "", new { @id = "Error", @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Foto, new { @class="control-label"})
+                        @Html.TextBoxFor(model => model.Foto, new { @class="form-control"})
+                    </div>
+                    <br />
+                    <div id="divButtons" class="tright">
+
+                        <button id="btnSalvar" value="Salvar" type="submit" title="Salvar"class="btn btn-secondary" formaction="@Url.Action("Create","Revistas", new { acao = "Salvar"})">Secondary</button>
+                        @*<button  class="main"  formaction="@Url.Action("Create","Revistas", new { acao = "Salvar"})" type="submit" name="Salvar" >Salvar</button>*@
+                        @*<button id="btnEnviarAnp" class="main" title="Enviar para a ANP" formaction="@Url.Action("CadastroForm","NPPV279", new { acao = "Enviar"})" type="submit" name="Enviar" value="Enviar">Salvar e Enviar</button>*@
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

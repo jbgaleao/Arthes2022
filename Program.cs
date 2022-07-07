@@ -1,15 +1,23 @@
 using Arthes2022.Data;
+using Arthes2022.Data.Repository;
+using Arthes2022.Data.Interface;
 
 using Microsoft.EntityFrameworkCore;
 
-var builder = WebApplication.CreateBuilder(args);
+WebApplicationBuilder? builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IRevistaManager, IRevistaManager>();
+builder.Services.AddScoped<IRevistaRepository, RevistaRepository>();
+
+
+
 builder.Services.AddDbContext<ArthesContext>(options => options.UseSqlServer(builder.
     Configuration.GetConnectionString("ArthesDbConn")));
 
-var app = builder.Build();
+
+WebApplication? app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

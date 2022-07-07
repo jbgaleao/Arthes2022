@@ -1,5 +1,5 @@
 ﻿using Arthes2022.Data;
-using Arthes2022.Data.Repository;
+using Arthes2022.Data.Interface;
 using Arthes2022.Models.Entities;
 using Arthes2022.Models.ViewModels;
 
@@ -13,7 +13,7 @@ namespace Arthes2022.Controllers
         public RevistasController(IRevistaManager revistaManager) => _revistaManager = revistaManager;
 
 
-       [HttpGet]
+        [HttpGet]
         public async Task<IActionResult> ListaRevista()
         {
             IEnumerable<Revista>? listaRevista = await _revistaManager.GetRevistasAsync();
@@ -33,6 +33,21 @@ namespace Arthes2022.Controllers
         {
             Revista? revista = await _revistaManager.GetRevistaAsyncById(Id);
             return View(revista);
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> InsertRevista([FromBody] RevistaViewModel rvm)
+        {
+            Revista r = new Revista();
+            r.Tema = rvm.Tema;
+            r.NumeroEdicao = rvm.NumeroEdicao;
+            r.AnoEdicao = rvm.AnoEdicao;
+            r.MesEdicao = rvm.MesEdicao;
+            r.Foto = rvm.Foto;
+
+            Revista revistaIncluida = await _revistaManager.InsertRevistaAsync(r);
+            return View("ListaRevista");
         }
     }
 }

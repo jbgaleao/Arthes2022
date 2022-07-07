@@ -3,12 +3,13 @@ using Arthes2022.Data.Repository;
 using Arthes2022.Data.Interface;
 
 using Microsoft.EntityFrameworkCore;
+using Arthes2022.Data.Implementation;
 
 WebApplicationBuilder? builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddScoped<IRevistaManager, IRevistaManager>();
+builder.Services.AddScoped<IRevistaManager, RevistaManager>();
 builder.Services.AddScoped<IRevistaRepository, RevistaRepository>();
 
 

@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Arthes2022.Models.Entities.Revista>
+
+@{
+    ViewData["Title"] = "Lista de Revistas";
+}
+
+<h1>Lista de Revistas</h1>
+
+<p>
+    <a asp-action="Create">Nova Revista</a>
+</p>
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.Label("Tema")
+            </th>
+            <th>
+                @Html.Label("Número da Edição")
+            </th>
+            <th>
+                @Html.Label("Mês da Edição")
+            </th>
+            <th>
+               @Html.Label("Ano da Edição")
+            </th>
+            <th>
+                @Html.Label("Foto da Capa")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tema)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroEdicao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MesEdicao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnoEdicao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Foto)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

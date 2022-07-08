@@ -4,19 +4,27 @@ using Arthes2022.Data.Interface;
 
 using Microsoft.EntityFrameworkCore;
 using Arthes2022.Data.Implementation;
+using FluentValidation.AspNetCore;
+using Arthes2022.Models.Validators;
+using System.Globalization;
 
 WebApplicationBuilder? builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddScoped<IRevistaManager, RevistaManager>();
-builder.Services.AddScoped<IRevistaRepository, RevistaRepository>();
 
+builder.Services.AddControllers()
+    .AddFluentValidation(f =>
+    {
+        f.ValidatorOptions.LanguageManager.Culture = new CultureInfo("pt-BR");
 
+        f.RegisterValidatorsFromAssemblyContaining<RevistaViewModelValidator>();
 
+    });
 builder.Services.AddDbContext<ArthesContext>(options => options.UseSqlServer(builder.
     Configuration.GetConnectionString("ArthesDbConn")));
-
+builder.Services.AddScoped<IRevistaManager, RevistaManager>();
+builder.Services.AddScoped<IRevistaRepository, RevistaRepository>();
 
 WebApplication? app = builder.Build();
 

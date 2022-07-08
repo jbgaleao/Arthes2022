@@ -44,7 +44,7 @@ namespace Arthes2022.Data.Repository
             Revista? revistaConsultada = await _context.REVISTAS.FindAsync(Id);
             _context.REVISTAS.Remove(revistaConsultada);
             await _context.SaveChangesAsync();
-                }
+        }
 
 
     }

@@ -2,20 +2,20 @@
 
 namespace Arthes2022.Models.Entities
 {
-    public enum Mes
+    public enum Mes : int
     {
-        JANEIRO, 
-        FEVEREIRO, 
-        [Description("MARÇO")] 
-        MARCO, 
-        ABRIL, 
-        MAIO, 
-        JUNHO, 
-        JULHO, 
-        AGOSTO, 
-        SETEMBRO, 
-        OUTBRO, 
-        NOVEMBRO, 
+        JANEIRO = 1,
+        FEVEREIRO,
+        [Description("MARÇO")]
+        MARCO,
+        ABRIL,
+        MAIO,
+        JUNHO,
+        JULHO,
+        AGOSTO,
+        SETEMBRO,
+        OUTBRO,
+        NOVEMBRO,
         DEZEMBRO
     }
 }

@@ -1,11 +1,13 @@
 using Arthes2022.Data;
-using Arthes2022.Data.Repository;
+using Arthes2022.Data.Implementation;
 using Arthes2022.Data.Interface;
+using Arthes2022.Data.Repository;
+using Arthes2022.Models.Validators;
+
+using FluentValidation.AspNetCore;
 
 using Microsoft.EntityFrameworkCore;
-using Arthes2022.Data.Implementation;
-using FluentValidation.AspNetCore;
-using Arthes2022.Models.Validators;
+
 using System.Globalization;
 
 WebApplicationBuilder? builder = WebApplication.CreateBuilder(args);

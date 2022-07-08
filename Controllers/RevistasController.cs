@@ -1,5 +1,4 @@
-﻿using Arthes2022.Data;
-using Arthes2022.Data.Interface;
+﻿using Arthes2022.Data.Interface;
 using Arthes2022.Models.Entities;
 using Arthes2022.Models.ViewModels;
 
@@ -37,7 +36,7 @@ namespace Arthes2022.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> InsertRevista([FromBody] RevistaViewModel rvm)
+        public async Task<IActionResult> InsertRevista(RevistaViewModel rvm)
         {
             Revista r = new Revista();
             r.Tema = rvm.Tema;
@@ -46,8 +45,9 @@ namespace Arthes2022.Controllers
             r.MesEdicao = rvm.MesEdicao;
             r.Foto = rvm.Foto;
 
-            Revista revistaIncluida = await _revistaManager.InsertRevistaAsync(r);
-            return View("ListaRevista");
+            //Revista revistaIncluida = 
+            await _revistaManager.InsertRevistaAsync(r);
+            return RedirectToAction("ListaRevista");
         }
     }
 }

@@ -22,7 +22,7 @@ namespace Arthes2022.Data.Implementation
             return await revistaRepository.GetRevistaAsyncById(id);
         }
 
-        public async Task<Revista> InsertRevistaAsync(Revista revista)
+        public async Task<Revista> CreateRevistaAsync(Revista revista)
         {
             return await revistaRepository.InsertRevistaAsync(revista);
         }

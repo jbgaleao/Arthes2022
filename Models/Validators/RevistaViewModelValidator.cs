@@ -1,7 +1,5 @@
 ﻿using Arthes2022.Models.ViewModels;
 
-using FluentValidation;
-
 namespace Arthes2022.Models.Validators
 {
     public class RevistaViewModelValidator : AbstractValidator<RevistaViewModel>
@@ -27,7 +25,7 @@ namespace Arthes2022.Models.Validators
             //  ANO DA EDIÇÃO
             RuleFor(x => x.AnoEdicao).NotNull().WithMessage("Campo não deve ser nulo");
             RuleFor(x => x.AnoEdicao).NotEmpty().WithMessage("Campo não deve ser vazio");
-            RuleFor(x => x.AnoEdicao).ExclusiveBetween(1990,2030).WithMessage("Valor deve ser maior que 1990");
+            RuleFor(x => x.AnoEdicao).ExclusiveBetween(1990, 2030).WithMessage("Valor deve ser maior que 1990");
 
             //  FOTO
             RuleFor(x => x.Foto).NotNull().WithMessage("Campo não deve ser nulo");

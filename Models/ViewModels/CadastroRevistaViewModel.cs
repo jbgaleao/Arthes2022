@@ -2,21 +2,13 @@
 
 namespace Arthes2022.Models.ViewModels
 {
-    public class RevistaViewModel
+    public class CadastroRevistaViewModel
     {
-        [Display(Name = "Tema:")]
+        public int Id { get; set; }
         public string? Tema { get; set; }
-
-        [Display(Name = "Número da Edição:")]
         public int NumeroEdicao { get; set; }
-
-        [Display(Name = "Mês de Edição:")]
         public Mes MesEdicao { get; set; }
-
-        [Display(Name = "Ano da Edição:")]
         public int AnoEdicao { get; set; }
-
-        [Display(Name = "Foto de Capa:")]
         public string? Foto { get; set; }
     }
 }

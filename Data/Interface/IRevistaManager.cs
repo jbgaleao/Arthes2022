@@ -6,7 +6,7 @@ namespace Arthes2022.Data.Interface
     {
         Task<Revista?> GetRevistaAsyncById(int id);
         Task<IEnumerable<Revista>> GetRevistasAsync();
-        Task<Revista> InsertRevistaAsync(Revista revista);
+        Task<Revista> CreateRevistaAsync(Revista revista);
         Task<Revista> UpdateRevistaAsync(Revista revista);
         Task DeletaRevistaAsync(int Id);
     }

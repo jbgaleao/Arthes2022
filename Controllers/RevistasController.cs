@@ -2,8 +2,6 @@
 using Arthes2022.Models.Entities;
 using Arthes2022.Models.ViewModels;
 
-using Microsoft.AspNetCore.Mvc;
-
 namespace Arthes2022.Controllers
 {
     public class RevistasController : Controller
@@ -36,17 +34,16 @@ namespace Arthes2022.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> InsertRevista(RevistaViewModel rvm)
+        public async Task<IActionResult> CreateRevista(CadastroRevistaViewModel cadatroRevistaViewModel)
         {
-            Revista r = new Revista();
-            r.Tema = rvm.Tema;
-            r.NumeroEdicao = rvm.NumeroEdicao;
-            r.AnoEdicao = rvm.AnoEdicao;
-            r.MesEdicao = rvm.MesEdicao;
-            r.Foto = rvm.Foto;
+            //Revista r = new Revista();
+            //r.Tema = rvm.Tema;
+            //r.NumeroEdicao = rvm.NumeroEdicao;
+            //r.AnoEdicao = rvm.AnoEdicao;
+            //r.MesEdicao = rvm.MesEdicao;
+            //r.Foto = rvm.Foto;
 
-            //Revista revistaIncluida = 
-            await _revistaManager.InsertRevistaAsync(r);
+            await _revistaManager.CreateRevistaAsync(r);
             return RedirectToAction("ListaRevista");
         }
     }

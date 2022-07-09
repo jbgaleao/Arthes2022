@@ -1,8 +1,6 @@
 ﻿using Arthes2022.Data.Interface;
 using Arthes2022.Models.Entities;
 
-using Microsoft.EntityFrameworkCore;
-
 namespace Arthes2022.Data.Repository
 {
     public class RevistaRepository : IRevistaRepository

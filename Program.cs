@@ -1,14 +1,9 @@
 using Arthes2022.Data;
 using Arthes2022.Data.Implementation;
 using Arthes2022.Data.Interface;
+using Arthes2022.Data.Mappings;
 using Arthes2022.Data.Repository;
 using Arthes2022.Models.Validators;
-
-using FluentValidation.AspNetCore;
-
-using Microsoft.EntityFrameworkCore;
-
-using System.Globalization;
 
 WebApplicationBuilder? builder = WebApplication.CreateBuilder(args);
 
@@ -23,8 +18,13 @@ builder.Services.AddControllers()
         f.RegisterValidatorsFromAssemblyContaining<RevistaViewModelValidator>();
 
     });
+
+builder.Services.AddAutoMapper(typeof(CadastroRevistaMappingProfile));
+
 builder.Services.AddDbContext<ArthesContext>(options => options.UseSqlServer(builder.
     Configuration.GetConnectionString("ArthesDbConn")));
+
+
 builder.Services.AddScoped<IRevistaManager, RevistaManager>();
 builder.Services.AddScoped<IRevistaRepository, RevistaRepository>();
 

@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-
-namespace Arthes2022.Models.Entities
+﻿namespace Arthes2022.Models.Entities
 {
     public enum Mes : int
     {

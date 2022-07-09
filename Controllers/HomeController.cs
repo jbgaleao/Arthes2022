@@ -1,9 +1,5 @@
 ﻿using Arthes2022.Models;
 
-using Microsoft.AspNetCore.Mvc;
-
-using System.Diagnostics;
-
 namespace Arthes2022.Controllers
 {
     public class HomeController : Controller
